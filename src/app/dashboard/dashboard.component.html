@@ -1,0 +1,22 @@
+<app-header></app-header>
+<p>
+  <button style="float:right;" (click)="addTournament()">Add Tournament</button>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Tournament Name</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">View Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let character of products">
+      <td><a [routerLink]="['../ViewTournament',character.Tournamentname]">{{ character.Tournamentname }}</a></td>
+      <td>{{ character.SOD }}</td>
+      <td>{{ character.EOD }}</td>
+      <td><button (click)="deleteTournament(character.id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
